@@ -17,5 +17,4 @@ describe("tests throws error for strings", function() {
     it('20+1a=error', function() {
         expect(()=>iAddNumbers(20, '1a')).toThrow("Error: I add only numbers");
     });
-
 });
