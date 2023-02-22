@@ -4,6 +4,6 @@
   },
   "type": "module",
   "scripts": {
-    "test-jasmine": "npx jasmine --config=jasmine/jasmine.json"
+    "test-jasmine": "npx jasmine --config=1_jasmine/jasmine.json"
   }
 }
