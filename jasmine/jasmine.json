@@ -1,0 +1,12 @@
+{
+  "spec_dir": "jasmine",
+  "spec_files": [
+      "source/__tests/**.js"
+  ],
+  "env": {
+      "failSpecWithNoExpectations": false,
+      "stopSpecOnExpectationFailure": false,
+      "stopOnSpecFailure": false,
+      "random": false
+  }
+}
