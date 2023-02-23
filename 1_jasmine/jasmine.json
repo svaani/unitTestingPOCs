@@ -1,7 +1,7 @@
 {
   "spec_dir": "1_jasmine",
   "spec_files": [
-      "source/__tests/**.js"
+      "source/**/__tests/**.js"
   ],
   "env": {
       "failSpecWithNoExpectations": false,
