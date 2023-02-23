@@ -1,10 +1,12 @@
 {
   "devDependencies": {
-    "jasmine": "^4.5.0"
+    "jasmine": "^4.5.0",
+    "mocha": "^10.2.0"
   },
   "type": "module",
   "scripts": {
     "test-jasmine": "npx jasmine --config=1_jasmine/jasmine.json",
-    "test-jasmine-refactored": "npx jasmine --config=2_jasmine_refactored/jasmine.json"
+    "test-jasmine-refactored": "npx jasmine --config=2_jasmine_refactored/jasmine.json",
+    "test-mocha": "mocha --recursive 2_mocha/source/**/__tests/**.js"
   }
 }
