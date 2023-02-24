@@ -1,10 +1,13 @@
 import * as Utils from '../iFetchName.js';
+import sinon from 'sinon';
+import assert from 'assert';
 
 describe("test Fetches Name", function() {
     it('id+name to be returned', async function() {
-        spyOn(Utils, "getName").and.returnValue("242 Ira");
+        sinon.stub(Utils, "getName").yields(10)
+        // spyOn(Utils, "getName").and.returnValue("242 Ira");
         const name  = await Utils.iFetchName(242);
-        expect(name).toEqual("242 Ira");
+        assert.equal(name,"20");
     });
 
     it('blank arg test', async function() {
