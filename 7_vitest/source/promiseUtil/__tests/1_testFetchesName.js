@@ -1,0 +1,27 @@
+import * as Utils from '../iFetchName.js';
+import { describe, it, expect, vi } from 'vitest';
+
+describe("test Fetches Name", function() {
+    it('id+name to be returned', async function() {
+        vi.mock(Utils.getName, ()=> "242 Ira");
+        //spyOn(Utils, "getName").and.returnValue("242 Ira");
+        const name  = await Utils.iFetchName(242);
+        expect(name).toEqual("242 Ira");
+    });
+
+    it('blank arg test', async function() {
+        vi.mock(Utils.getName, ()=> "Name can't be found");
+        //spyOn(Utils, "getName").and.returnValue("Name can't be found");
+        const name  = await Utils.iFetchName();
+        expect(name).toEqual("Name can't be found");
+    });
+
+    it('gives error', async function() {
+        vi.mock(Utils.getName, ()=> "Name can't be found");
+        // spyOn(Utils, "getName").and.callFake(() => "Name can't be found");
+        const name  = await Utils.iFetchName(243);
+        expect(name).toEqual("Name can't be found");
+    });
+});
+
+//test case can be written for getName as well

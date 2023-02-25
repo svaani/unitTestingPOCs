@@ -4,7 +4,8 @@
     "jasmine": "^4.5.0",
     "mocha": "^10.2.0",
     "nock": "^13.3.0",
-    "sinon": "^15.0.1"
+    "sinon": "^15.0.1",
+    "vitest": "^0.28.5"
   },
   "type": "module",
   "scripts": {
@@ -14,7 +15,8 @@
     "test-mocha-sinon": "mocha --recursive 3_mocha_sinon/source/**/__tests/**.js",
     "test-nock": "mocha --recursive 4_nock/source/**/__tests/**.js",
     "test-ava": "ava -r esm 5_ava/source/**/__tests/**.js",
-    "test-tape": "tape 6_tape/source/**/__tests/**.js"
+    "test-tape": "tape 6_tape/source/**/__tests/**.js",
+    "test-vitest": "vitest --config 7_vitest/vitest.config.js"
   },
   "name": "unittestingpocs",
   "version": "1.0.0",
