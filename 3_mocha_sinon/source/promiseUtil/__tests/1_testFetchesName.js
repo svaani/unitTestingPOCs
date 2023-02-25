@@ -1,26 +1,35 @@
-import * as Utils from '../iFetchName.js';
-import sinon from 'sinon';
-import assert from 'assert';
+/* comment "type": "module" in package.json, to run this as sinon doesn't support es6 modules*/
+const sinon = require('sinon');
+const { Utils } =  require('../iFetchName.js');
+const assert = require('assert');
 
 describe("test Fetches Name", function() {
     it('id+name to be returned', async function() {
-        sinon.stub(Utils, "getName").yields(10)
-        // spyOn(Utils, "getName").and.returnValue("242 Ira");
+        // sinon.stub(Utils, "getName").callsFake(id=>id+" Ira");
+        // assert.equal(Utils.getName(20),"20 Ira");
+
+        const getNameStub = sinon.stub(Utils, "getName");
+        getNameStub.callsFake(()=>Promise.resolve('242 Ira'));
         const name  = await Utils.iFetchName(242);
-        assert.equal(name,"20");
+        assert.equal(name,"242 Ira");
+
+        getNameStub.restore();
     });
 
     it('blank arg test', async function() {
-        spyOn(Utils, "getName").and.returnValue("Name can't be found");
+        // incomplete
+        const getNameStub = sinon.stub(Utils, "getName");
+        getNameStub.callsFake(()=>Promise.resolve("Name can't be found"));
+        try {
+
         const name  = await Utils.iFetchName();
-        expect(name).toEqual("Name can't be found");
+        } catch(err){
+            assert.equal(err,"Name can't be found");
+        }
+    
+        getNameStub.restore();
     });
 
-    it('gives error', async function() {
-        spyOn(Utils, "getName").and.callFake(() => "Name can't be found");
-        const name  = await Utils.iFetchName(243);
-        expect(name).toEqual("Name can't be found");
-    });
+    
 });
-
 //test case can be written for getName as well

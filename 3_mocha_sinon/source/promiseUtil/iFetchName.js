@@ -1,6 +1,6 @@
-export const iFetchName = async id => {
+const iFetchName = async id => {
     try {
-        return await getName(id).catch(err=>err);
+        return await getName(id);
     }
     catch(err) {
         throw err;
@@ -9,7 +9,7 @@ export const iFetchName = async id => {
 }
 
 // nested function
-export const getName = id => new Promise((resolve,reject)=>{
+const getName = id => new Promise((resolve,reject)=>{
     setTimeout(()=>{
         if(id%2===0){
             resolve(id+" Ira");
@@ -17,3 +17,5 @@ export const getName = id => new Promise((resolve,reject)=>{
         else reject("Name can't be found")
     },300);
 });
+
+exports.Utils = { iFetchName: iFetchName, getName : getName};

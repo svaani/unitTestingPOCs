@@ -4,7 +4,6 @@
     "mocha": "^10.2.0",
     "sinon": "^15.0.1"
   },
-  "type": "module",
   "scripts": {
     "test-jasmine": "npx jasmine --config=1_jasmine/jasmine.json",
     "test-jasmine-refactored": "npx jasmine --config=2_jasmine_refactored/jasmine.json",
