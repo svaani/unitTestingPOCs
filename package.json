@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "ava": "^5.2.0",
     "jasmine": "^4.5.0",
     "mocha": "^10.2.0",
     "nock": "^13.3.0",
@@ -11,7 +12,8 @@
     "test-jasmine-refactored": "npx jasmine --config=2_jasmine_refactored/jasmine.json",
     "test-mocha": "mocha --recursive 2_mocha/source/**/__tests/**.js",
     "test-mocha-sinon": "mocha --recursive 3_mocha_sinon/source/**/__tests/**.js",
-    "test-nock": "mocha --recursive 4_nock/source/**/__tests/**.js"
+    "test-nock": "mocha --recursive 4_nock/source/**/__tests/**.js",
+    "test-ava": "ava -r esm 5_ava/source/**/__tests/**.js"
   },
   "name": "unittestingpocs",
   "version": "1.0.0",
